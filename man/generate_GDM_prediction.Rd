@@ -5,12 +5,24 @@
 \title{Generates a prediction for a genetically local area
 for a selected species and location}
 \usage{
-generate_GDM_prediction(selected_location, gdm_model_file)
+generate_GDM_prediction(longitude, latitude, gdm_model_file = NULL,
+  species_name = NULL, model_dir = NULL, gdm_model = NULL,
+  out_dir = NULL)
 }
 \arguments{
-\item{selected_location}{-- a selected point [Required]}
+\item{longitude}{-- selected longitude}
 
-\item{gdm_model_file}{-- an R object bundling everything needed for model [Required]}
+\item{latitude}{-- selected latitude}
+
+\item{gdm_model_file}{-- an R object file containing a model list (called "md")}
+
+\item{species_name}{-- name of species (as it appears in a gdm model file, which ends "_genetic_model.Rd"}
+
+\item{model_dir}{-- directory in which gdm model can be found}
+
+\item{gdm_model}{-- an R list bundling everything required to predict under a GDM}
+
+\item{out_dir}{-- location to place raster of results (if NULL, return raster object)}
 }
 \value{
 a raster containing the prediction of genetically local area
@@ -21,7 +33,7 @@ for a selected species and location
 }
 \examples{
 \dontrun{
-generate_GDM_prediction <- function( c(150.45, -33.66), CallSerr_genetic_model.Rd )
+generate_GDM_prediction <- function( longitude=150.45, latitude=-33.66, gdm_model_file="CallSerr_genetic_model.Rd", out_dir )
 }
 }
 \author{
