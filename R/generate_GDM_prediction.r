@@ -48,7 +48,7 @@ generate_GDM_prediction <- function(longitude, latitude, gdm_model_file=NULL, sp
             cat("                             or taxon name plus model directory \n")
             stop()
          }
-         gfm <- paste(model_dir, species_name, "_genetic_model.Rd", sep="")
+         gmf <- paste(model_dir, species_name, "_genetic_model.Rd", sep="")
 
       }
       load(gmf)
